@@ -22,13 +22,6 @@ namespace ApplaudoWeek04CodeFirst.Data
 
             protected override void OnModelCreating(ModelBuilder modelBuilder)
             {
-                
-                modelBuilder.Entity<MovieTag>()
-                    .HasKey(a => new { a.MovieId, a.TagId });
-
-                modelBuilder.Entity<MovieLike>()
-                    .HasKey(a => new { a.MovieId, a.CustomerId });
-
             }
 
             DbSet<Customer> Customers { get; set; }
@@ -37,7 +30,7 @@ namespace ApplaudoWeek04CodeFirst.Data
 
             DbSet<MovieCopy> MovieCopies { get; set; }
 
-            DbSet<MovieTag> MovieTags { get; set; }
+            DbSet<MovieTagConfiguration> MovieTags { get; set; }
 
             DbSet<Rental> Rentals { get; set; }
 
