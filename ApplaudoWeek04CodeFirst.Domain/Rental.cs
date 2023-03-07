@@ -16,7 +16,7 @@ namespace ApplaudoWeek04CodeFirst.Domain
 
         public DateTime RentalDate { get; set; }
 
-        public DateTime ReturnDate { get; set; }
+        public DateTime? ReturnDate { get; set; }
 
         public virtual Customer Customer { get; set; }
 
