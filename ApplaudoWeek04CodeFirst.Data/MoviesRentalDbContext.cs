@@ -1,4 +1,5 @@
-﻿using ApplaudoWeek04CodeFirst.Domain;
+﻿using ApplaudoWeek04CodeFirst.Data.Configurations.Entities;
+using ApplaudoWeek04CodeFirst.Domain;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace ApplaudoWeek04CodeFirst.Data
     {
             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             {
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-PH8N518;Integrated Security=True; Initial Catalog=MovieRental;")
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-PH8N518;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False; Database=MovieRental;")
                 //.LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name })
                 //.EnableSensitiveDataLogging()
                 ;
@@ -22,7 +23,7 @@ namespace ApplaudoWeek04CodeFirst.Data
             {
                 modelBuilder.ApplyConfiguration(new CustomerConfiguration())
                             .ApplyConfiguration(new MovieConfiguration())
-                            .ApplyConfiguration(new TagConfiguration ())
+                            .ApplyConfiguration(new TagConfiguration())
                             .ApplyConfiguration(new MovieTagConfiguration())
                             .ApplyConfiguration(new MovieCopyConfiguration())
                             .ApplyConfiguration(new MovieLikeConfiguration())
@@ -35,7 +36,7 @@ namespace ApplaudoWeek04CodeFirst.Data
 
             DbSet<MovieCopy> MovieCopies { get; set; }
 
-            DbSet<MovieTagConfiguration> MovieTags { get; set; }
+            DbSet<MovieTag> MovieTags { get; set; }
 
             DbSet<Rental> Rentals { get; set; }
 
