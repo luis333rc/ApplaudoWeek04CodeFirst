@@ -8,13 +8,11 @@ using System.Threading.Tasks;
 
 namespace ApplaudoWeek04CodeFirst.Data
 {
-    public  class MoviesRentalDbContext :DbContext
+    public  class MoviesRentalDbContext : DbContext
     {
-        public class MoviesDbContext : DbContext
-        {
             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             {
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-PH8N518;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False; Database=MovieRental")
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-PH8N518;Integrated Security=True; Initial Catalog=MovieRental;")
                 //.LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name })
                 //.EnableSensitiveDataLogging()
                 ;
@@ -22,6 +20,13 @@ namespace ApplaudoWeek04CodeFirst.Data
 
             protected override void OnModelCreating(ModelBuilder modelBuilder)
             {
+                modelBuilder.ApplyConfiguration(new CustomerConfiguration())
+                            .ApplyConfiguration(new MovieConfiguration())
+                            .ApplyConfiguration(new TagConfiguration ())
+                            .ApplyConfiguration(new MovieTagConfiguration())
+                            .ApplyConfiguration(new MovieCopyConfiguration())
+                            .ApplyConfiguration(new MovieLikeConfiguration())
+                            .ApplyConfiguration(new RentalConfiguration());
             }
 
             DbSet<Customer> Customers { get; set; }
@@ -37,7 +42,5 @@ namespace ApplaudoWeek04CodeFirst.Data
             DbSet<Tag> Tags { get; set; }
 
             DbSet<MovieLike> MovieLikes { get; set; }
-
-        }
     }
 }
