@@ -22,11 +22,11 @@ namespace ApplaudoWeek04CodeFirst.Data
                 new Tag { Id=4, Name= "Thriller" },
                 new Tag { Id=6, Name= "Mystery" },
                 new Tag { Id=7, Name= "Drama" },
-                new Tag { Id=7, Name= "Fantasy" },
-                new Tag { Id=7, Name= "G" },
-                new Tag { Id=7, Name= "PG" },
-                new Tag { Id=7, Name= "PG-14" },
-                new Tag { Id=7, Name= "R" }
+                new Tag { Id=8, Name= "Fantasy" },
+                new Tag { Id=9, Name= "G" },
+                new Tag { Id=10, Name= "PG" },
+                new Tag { Id=11, Name= "PG-14" },
+                new Tag { Id=12, Name= "R" }
             );
         }
     }
