@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApplaudoWeek04CodeFirst.Data
+namespace ApplaudoWeek04CodeFirst.Data.Configurations.Entities
 {
     public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
     {
