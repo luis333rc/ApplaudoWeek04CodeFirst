@@ -14,4 +14,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ApplaudoWeek04CodeFirst.Data\ApplaudoWeek04CodeFirst.Data.csproj" />
+    <ProjectReference Include="..\ApplaudoWeek04CodeFirst.Domain\ApplaudoWeek04CodeFirst.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
