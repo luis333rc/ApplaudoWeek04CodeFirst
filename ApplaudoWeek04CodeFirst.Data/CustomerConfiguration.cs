@@ -19,7 +19,8 @@ namespace ApplaudoWeek04CodeFirst.Data
 
             builder.HasData(
                 new Customer { Id = 1, FirstMidName = "Max", LastName = "Jones" },
-                new Customer { Id = 2, FirstMidName = "Eve", LastName = "Jackson" }
+                new Customer { Id = 2, FirstMidName = "Eve", LastName = "Jackson" },
+                new Customer { Id = 3, FirstMidName = "Mike", LastName = "Thompson" }
             );
 
 
