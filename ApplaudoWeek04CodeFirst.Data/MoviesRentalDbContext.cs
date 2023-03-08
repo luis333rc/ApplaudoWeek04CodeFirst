@@ -30,18 +30,18 @@ namespace ApplaudoWeek04CodeFirst.Data
                             .ApplyConfiguration(new RentalConfiguration());
             }
 
-            DbSet<Customer> Customers { get; set; }
+            public DbSet<Customer> Customers { get; set; }
 
-            DbSet<Movie> Movies { get; set; }
+            public DbSet<Movie> Movies { get; set; }
 
-            DbSet<MovieCopy> MovieCopies { get; set; }
+            public DbSet<MovieCopy> MovieCopies { get; set; }
 
-            DbSet<MovieTag> MovieTags { get; set; }
+            public DbSet<MovieTag> MovieTags { get; set; }
 
-            DbSet<Rental> Rentals { get; set; }
+            public DbSet<Rental> Rentals { get; set; }
 
-            DbSet<Tag> Tags { get; set; }
+            public DbSet<Tag> Tags { get; set; }
 
-            DbSet<MovieLike> MovieLikes { get; set; }
+            public DbSet<MovieLike> MovieLikes { get; set; }
     }
 }
