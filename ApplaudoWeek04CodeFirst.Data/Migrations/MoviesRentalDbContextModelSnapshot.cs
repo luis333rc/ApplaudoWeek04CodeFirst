@@ -378,7 +378,7 @@ namespace ApplaudoWeek04CodeFirst.Data.Migrations
                     b.Property<DateTime>("RentalDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 3, 7, 19, 59, 30, 703, DateTimeKind.Local).AddTicks(9823));
+                        .HasDefaultValue(new DateTime(2023, 3, 7, 21, 7, 46, 772, DateTimeKind.Local).AddTicks(1215));
 
                     b.Property<DateTime?>("ReturnDate")
                         .HasColumnType("datetime2");

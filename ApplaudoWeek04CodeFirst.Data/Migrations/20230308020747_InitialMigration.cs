@@ -136,7 +136,7 @@ namespace ApplaudoWeek04CodeFirst.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CustomerId = table.Column<int>(type: "int", nullable: false),
                     MovieCopyId = table.Column<int>(type: "int", nullable: false),
-                    RentalDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 3, 7, 19, 59, 30, 703, DateTimeKind.Local).AddTicks(9823)),
+                    RentalDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2023, 3, 7, 21, 7, 46, 772, DateTimeKind.Local).AddTicks(1215)),
                     ReturnDate = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
