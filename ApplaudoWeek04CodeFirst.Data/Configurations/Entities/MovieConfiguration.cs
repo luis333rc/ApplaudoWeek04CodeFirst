@@ -13,6 +13,8 @@ namespace ApplaudoWeek04CodeFirst.Data.Configurations.Entities
     {
         public void Configure(EntityTypeBuilder<Movie> builder)
         {
+            builder.HasIndex( i => i.Title).IsUnique();
+
             builder.Property(x => x.Title).HasMaxLength(40).IsRequired();
             builder.Property(x => x.Description).HasMaxLength(1000);
             builder.Property(x => x.PosterUrl).HasMaxLength(300);
@@ -20,11 +22,6 @@ namespace ApplaudoWeek04CodeFirst.Data.Configurations.Entities
             builder.Property(x => x.Price).IsRequired();
             builder.Property(x => x.Stock).HasDefaultValue(1);
             builder.Property(x => x.Available).HasDefaultValue(false);
-
-            builder.HasKey(x => x.Id);
-            builder.HasMany(m => m.MovieTags);
-            builder.HasMany(m => m.MovieLikes);
-            builder.HasMany(m => m.MovieCopies);
 
             builder.HasData(
                 new Movie

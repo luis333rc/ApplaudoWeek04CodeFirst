@@ -15,6 +15,8 @@ namespace ApplaudoWeek04CodeFirst.Data.Configurations.Entities
         {
             builder.HasKey(x => x.Id);
 
+            builder.Property(p=>p.Available).HasDefaultValue(true);
+
             builder.HasData(
                 new MovieCopy { Id = 1, MovieId = 1, Available = true },
                 new MovieCopy { Id = 2, MovieId = 1, Available = true },

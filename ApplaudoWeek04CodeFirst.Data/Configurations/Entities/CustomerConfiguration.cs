@@ -16,6 +16,7 @@ namespace ApplaudoWeek04CodeFirst.Data.Configurations.Entities
             builder.Property(p => p.FirstMidName).HasMaxLength(50);
             builder.Property(p => p.LastName).HasMaxLength(30);
 
+            builder.HasIndex(p => new { p.FirstMidName, p.LastName }).IsUnique();
 
             builder.HasData(
                 new Customer { Id = 1, FirstMidName = "Max", LastName = "Jones" },

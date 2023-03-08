@@ -16,6 +16,14 @@ namespace ApplaudoWeek04CodeFirst.Data.Configurations.Entities
         {
             builder.HasKey(a => new { a.MovieId, a.CustomerId });
 
+            builder.HasOne(o => o.Movie)
+                    .WithMany( m => m.MovieLikes)
+                    .HasForeignKey(o => o.MovieId);
+
+            builder.HasOne(o => o.Customer)
+                    .WithMany(m => m.MovieLikes)
+                    .HasForeignKey(o => o.CustomerId);
+
             builder.HasData(
                 new MovieLike { MovieId = 1, CustomerId = 1, Likes = 4 },
                 new MovieLike { MovieId = 1, CustomerId = 2, Likes = 3 },
